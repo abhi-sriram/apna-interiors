@@ -363,16 +363,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero h1 {
   margin: 0;
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 72px;
+  line-height: 48px;
   color: #247881;
   font-family: "Poppins", sans-serif;
+  text-align: left;
+  max-width: 50%;
 }
 #hero h2 {
   color: #5e5e5e;
   margin: 10px 0 0 0;
   font-size: 22px;
+  text-align: left;
+  max-width: 50%;
+}
+#hero p {
+  /* color: #5e5e5e; */
+  /* margin: 10px 0 0 0; */
+  /* font-size: 22px; */
+  text-align: left;
+  max-width: 50%;
 }
 #hero .btn-get-started {
   font-family: "Poppins", sans-serif;
@@ -389,6 +400,27 @@ h1, h2, h3, h4, h5, h6 {
   
 }
 #hero .btn-get-started:hover {
+  background: #A34312;
+}
+#counts .btn-get-started {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 14px 50px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #247881;
+  left: 50%;
+  /* margin-right: -50%; */
+  transform: translate(-50%, -50%);  
+  position: absolute;
+  margin-top: 50px;
+}
+#counts .btn-get-started:hover {
   background: #A34312;
 }
 
@@ -413,10 +445,10 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-#hero .icon-boxes {
-  margin-top: 100px;
+#hero2 .icon-boxes {
+  /* margin-top: 50px; */
 }
-#hero .icon-box {
+#hero2 .icon-box {
   padding: 50px 30px;
   position: relative;
   overflow: hidden;
@@ -426,21 +458,23 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   z-index: 1;
 }
-#hero .icon-box .title {
+#hero2 .icon-box .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
-#hero .icon-box .title a {
+#hero2 .icon-box .title a {
   color: #247881;
   transition: 0.3s;
 }
-#hero .icon-box .description {
+#hero2 .icon-box .description {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
+  max-width: 100%;
+  margin:0;
 }
-#hero .icon-box .icon {
+#hero2 .icon-box .icon {
   margin-bottom: 20px;
   padding-top: 10px;
   display: inline-block;
@@ -449,10 +483,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   color: #247881;
 }
-#hero .icon-box:hover {
+#hero2 .icon-box:hover {
   transform: scale(1.08);
 }
-#hero .icon-box:hover .title a {
+#hero2 .icon-box:hover .title a {
   color: #247881;
 }
 @media (min-width: 1024px) {
@@ -470,12 +504,37 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
   }
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 26px;
+    max-width: 80%;
+    margin-left: -2rem;
   }
   #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: -2rem;
+    max-width: 80%;
+  }
+  #hero p {
+    /* color: #5e5e5e; */
+    /* margin: 10px 0 0 0; */
+    /* font-size: 22px; */
+    margin-left: -2rem;
+    text-align: left;
+    max-width: 90%;
+    font-size: 14px;
+  }
+  #hero .btn-get-started{
+    margin-left: -2rem;
+  }
+  #counts .btn-get-started{
+    padding: 5px 15px;
+  }
+  .counts .count-box p{
+    font-size: 16px !important;
+  }
+  .quicklinks{
+    padding-left: 30% !important;
   }
 }
 
@@ -483,17 +542,18 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 80px 0;
+  padding: 40px 0;
   overflow: hidden;
+  padding-bottom: 0px;
 }
 
 .section-bg {
-  background-color: #f8fbfe;
+  /* background-color: #f8fbfe; */
 }
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 .section-title h2 {
   font-size: 32px;
@@ -565,6 +625,7 @@ section {
 --------------------------------------------------------------*/
 .counts {
   padding: 60px 0;
+  padding-bottom: 100px;
 }
 .counts .count-box {
   width: 100%;
@@ -580,11 +641,11 @@ section {
   margin: auto;
 }
 .counts .count-box p {
-  padding: 8px 0 0 0;
-  font-family: "Raleway", sans-serif;
+  /* padding: 8px 0 0 0; */
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  color: #1e6ca6;
+  font-size: 18px;
+  /* color: #247881; */
 }
 
 /*--------------------------------------------------------------
@@ -861,13 +922,13 @@ section {
   box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
 }
 .services .iconbox-blue i {
-  color: #47aeff;
+  color: #247881;
 }
 .services .iconbox-blue:hover .icon i {
   color: #fff;
 }
 .services .iconbox-blue:hover .icon path {
-  fill: #47aeff;
+  fill: #247881;
 }
 .services .iconbox-orange i {
   color: #ffa76e;
@@ -1262,10 +1323,11 @@ section {
 .pricing .box .btn-wrap {
   padding: 15px;
   text-align: center;
+  flex: auto;
 }
 .pricing .box .btn-buy {
   display: inline-block;
-  padding: 10px 40px;
+  padding: 8px 40px;
   border-radius: 4px;
   color: #247881;
   transition: none;
@@ -1275,6 +1337,7 @@ section {
   font-weight: 600;
   transition: 0.3s;
   border: 2px solid #247881;
+  margin: 10px;
 }
 .pricing .box .btn-buy:hover {
   background: #247881;
@@ -1292,11 +1355,14 @@ section {
 }
 .pricing .featured .btn-buy {
   color: #fff;
+  background: #247881;
   border: 2px solid #fff;
 }
 .pricing .featured .btn-buy:hover {
-  background: #fff;
-  color: #247881;
+  background: #A34312;
+  color: #fff;
+  border: 2px solid #A34312;
+
 }
 
 /*--------------------------------------------------------------
@@ -1540,7 +1606,12 @@ section {
     display: inline-block;
   }
 }
-
+.whyus{
+  padding-bottom: 80px !important;
+}
+.counts{
+  background-color: #f8fbfe;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1549,10 +1620,12 @@ section {
   font-size: 14px;
   background: #f8fbfe;
   box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
+  margin-top: 50px;
 }
 #footer .footer-top {
-  padding: 60px 0 30px 0;
-  background: #fff;
+  /* padding: 60px 0 30px 0; */
+  /* background: #fff; */
+  text-align: left !important;
 }
 #footer .footer-top .footer-contact {
   margin-bottom: 30px;
@@ -1683,6 +1756,7 @@ Pricing
 
 .pricing{
 	margin:40px 0px;
+  margin-top: 0px;
 }
 .pricing .table{
 	border-top:1px solid #ddd;
@@ -1798,3 +1872,119 @@ Pricing
 /* 
 Pricing End
 */
+/*--------------------------------------------------------------
+# Pricing
+--------------------------------------------------------------*/
+.pricing .box {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.pricing .box h3 {
+  font-weight: 400;
+  margin: -20px -20px 20px -20px;
+  padding: 20px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777777;
+  background: #f8f8f8;
+}
+.pricing .box h4 {
+  font-size: 36px;
+  color: #247881;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+.pricing .box h4 sup {
+  font-size: 20px;
+  top: -15px;
+  left: -3px;
+}
+.pricing .box h4 span {
+  color: #bababa;
+  font-size: 16px;
+  font-weight: 300;
+}
+.pricing .box ul {
+  padding: 0;
+  list-style: none;
+  color: #444444;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+.pricing .box ul li {
+  padding-bottom: 16px;
+}
+.pricing .box ul i {
+  color: #A34312;
+  font-size: 18px;
+  padding-right: 4px;
+}
+.pricing .box ul .na {
+  color: #ccc;
+  text-decoration: line-through;
+}
+.pricing .btn-wrap {
+  margin: 20px -20px -20px -20px;
+  padding: 20px 15px;
+  background: #f8f8f8;
+  text-align: center;
+}
+.pricing .btn-buy {
+  display: inline-block;
+  padding: 8px 35px 10px 35px;
+  border-radius: 4px;
+  color: #247881;
+  transition: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 2px solid #247881;
+
+}
+.pricing .btn-buy:hover {
+  background: #fff;
+}
+.pricing .btn-buy2 {
+  display: inline-block;
+  padding: 10px 35px 10px 35px;
+  border-radius: 4px;
+  color: #247881;
+  transition: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+  /* border: 2px solid #247881; */
+  margin: 10px;
+
+}
+.pricing .btn-buy2:hover {
+  background: #fff;
+}
+.pricing .featured h3 {
+  color: #fff;
+  background: #247881;
+}
+.pricing .advanced {
+  width: 200px;
+  position: absolute;
+  top: 18px;
+  right: -68px;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-size: 14px;
+  padding: 1px 0 3px 0;
+  background: #A34312;
+  color: #fff;
+}
+
