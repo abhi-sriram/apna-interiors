@@ -1621,6 +1621,7 @@ section {
   background: #f8fbfe;
   box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
   margin-top: 50px;
+  padding-top: 2rem;
 }
 #footer .footer-top {
   /* padding: 60px 0 30px 0; */
@@ -1666,7 +1667,7 @@ section {
   line-height: 1;
 }
 #footer .footer-top .footer-links ul li {
-  padding: 10px 0;
+  padding: 4px 0;
   display: flex;
   align-items: center;
 }
@@ -1900,6 +1901,13 @@ Pricing End
   font-family: "Poppins", sans-serif;
   margin-bottom: 20px;
 }
+.pricing .box h5{
+  font-size: 20px;
+  color: #444444;
+  font-family: "Poppins",sans-serif;
+  margin-bottom: 10px;
+  
+}
 .pricing .box h4 sup {
   font-size: 20px;
   top: -15px;
@@ -1908,6 +1916,11 @@ Pricing End
 .pricing .box h4 span {
   color: #bababa;
   font-size: 16px;
+  font-weight: 300;
+}
+.pricing .box h5 span {
+  color: #bababa;
+  font-size: 14px;
   font-weight: 300;
 }
 .pricing .box ul {
@@ -1988,3 +2001,59 @@ Pricing End
   color: #fff;
 }
 
+
+/*--------------------------------------------------------------
+# Departments
+--------------------------------------------------------------*/
+.departments {
+  overflow: hidden;
+}
+.departments .nav-tabs {
+  border: 0;
+}
+.departments .nav-link {
+  border: 0;
+  padding: 12px 15px 12px 0;
+  transition: 0.3s;
+  color: #5e5e5e;
+  border-radius: 0;
+  border-right: 2px solid #ebf1f6;
+  font-weight: 600;
+  font-size: 15px;
+}
+.departments .nav-link:hover {
+  color: #247881;
+}
+.departments .nav-link.active {
+  color: #247881;
+  border-color: #247881;
+}
+.departments .tab-pane.active {
+  -webkit-animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out;
+}
+.departments .details h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c4964;
+}
+.departments .details p {
+  color: #777777;
+}
+.departments .details p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 992px) {
+  .departments .nav-link {
+    border: 0;
+    padding: 15px;
+  }
+  .departments .nav-link.active {
+    color: #fff;
+    background: #247881;
+  }
+}
+.copyright{
+  margin-bottom: 1rem;
+}

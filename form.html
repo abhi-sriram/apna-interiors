@@ -1,0 +1,31 @@
+
+<script>
+    function mail() {
+      //let data = {"text": "barium"};
+      var a = document.getElementById("email");
+      a = a.value;
+      const url = "http://localhost:5000";
+    
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({
+          "email": "test@ha"
+      }));
+    
+    //   document.getElementById("subject").value='';
+    
+    }
+    </script>
+<!-- <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="#" method="post"> -->
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Full Name</label>
+    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+    <label for="email">Email Address</label>
+    <input type="email" name="_replyto" id="email" placeholder="email@domain.tld" required="">
+    <label for="message">Message</label>
+    <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+  </fieldset>
+  <input type="submit" value="Submit" onclick="mail()">
+<!-- </form> -->
