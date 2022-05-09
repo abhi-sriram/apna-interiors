@@ -430,14 +430,13 @@ h6 {
   padding: 14px 50px;
   border-radius: 5px;
   transition: 0.5s;
-  margin-top: 30px;
   color: #fff;
   background: #247881;
   left: 50%;
   /* margin-right: -50%; */
   transform: translate(-50%, -50%);
   position: absolute;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 #counts .btn-get-started:hover {
   background: #a34312;
@@ -550,7 +549,7 @@ h6 {
     padding: 5px 15px;
   }
   .counts .count-box p {
-    font-size: 16px !important;
+    font-size: 22px !important;
   }
   .quicklinks {
     padding-left: 30% !important;
@@ -663,7 +662,7 @@ section {
   /* padding: 8px 0 0 0; */
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 24px;
   /* color: #247881; */
 }
 
@@ -1648,6 +1647,7 @@ section {
 }
 .counts {
   background-color: #f8fbfe;
+  /* background-image: url(banner.png); */
 }
 /*--------------------------------------------------------------
 # Footer
@@ -2221,3 +2221,10 @@ Pricing End
   width: 50%;
 }
 /* Form inputs end */
+
+.banner {
+  background-image: url("../../banner.png");
+  height: 330px !important;
+  background-size: cover;
+  box-shadow: 2px 2px 20px #e1ecf0;
+}

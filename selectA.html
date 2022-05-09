@@ -47,7 +47,7 @@
         <ul>
           <li><a class="nav-link" href="./index.html">Home</a></li>
           <li><a class="nav-link" href="./index.html#pricing">Pricing</a></li>
-          <li><a class="nav-link scrollto " href="#faq">FAQs</a></li>
+          <li><a class="nav-link scrollto " href="./faqs.html">FAQs</a></li>
 
 
           <li><a class="getstarted scrollto" href="tel:+919989402743">Call Us</a></li>
@@ -332,7 +332,7 @@
           <div class="form-group space-y-2 ">  
             <div class="form-group mt-5 flex sm:space-x-2 space-y-2 sm:space-y-0 flex-col sm:flex-row">
               <div class="form__group field !w-full sm:!w-1/2">
-                <input type="input" class="form__field " placeholder="Full Name" name="name" id='name' required />
+                <input type="text" class="form__field " placeholder="Full Name" name="name" id='name' required />
                 <label for="name" class="form__label">Full Name</label>
               </div>
               <div class="form__group field !w-full sm:!w-1/2">
@@ -342,7 +342,7 @@
 
             </div>         
               <div class="form__group field !w-full">
-                <input type="input" class="form__field" placeholder="Email" name="name" id='email' required />
+                <input type="email" class="form__field" placeholder="Email" name="name" id='email' required />
                 <label for="name" class="form__label">Email</label>
               </div>
              
@@ -367,7 +367,7 @@
                 <div class="g-recaptcha" id="recaptcha" data-sitekey="your_site_key"></div>
                 <br/>
                 <!-- <input type="submit" value="Submit"> -->
-              <button onclick="showPrice('price');"   class="btn-get-customize">Calculate</button>
+              <button onclick="showPrice('price');" id="cal-btn"  class="btn-get-customize">Calculate</button>
   
             </div>
             <p id="error" class="text-red-500 text-center"></p>
@@ -377,7 +377,7 @@
          
           <div class=""  id="price" style="display: none;" data-aos="zoom-in"
           data-aos-delay="500">
-            <p class="text-gray-800 text-lg uppercase text-center mt-3"><b>Amount Payable:<b> <span id="amount-id">20000</span> /-</p>
+            <p class="text-gray-800 text-lg uppercase text-center mt-3"><strong>Amount Payable:</strong> <span id="amount-id">20000</span> /-</p>
             <div class="flex items-center justify-center space-x-2">
             <a  id="pay-now"  class="btn-get-customize flex">Pay now <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
@@ -514,7 +514,7 @@
 
     const selected_ids = [];
     function btnChange() {
-      console.log(this);
+      // console.log(this);
       // this.className = "btn-checkout-no-no";
 
       if(this.className=="btn-checkout"){
@@ -552,7 +552,7 @@
     });
     function showPrice(id) {
       mail();
-      console.log("price");
+      // console.log("price");
        
     }
     let onloadCallback = function() {
@@ -566,6 +566,8 @@
 
       document.getElementById("error").innerHTML = "";
       
+      let cal_btn = document.getElementById("cal-btn");
+      cal_btn.innerHTML = "<div class='spinner-border' role='status' style = 'height: 20px; width:20px;'> </div>"
 
       let name = document.getElementById("name").value;
       let number = document.getElementById("number").value;
@@ -573,38 +575,51 @@
       let message = document.getElementById("more").value;
       let property = document.getElementById("property").value;
       let _from_url = 1
-      console.log({
-        name,number,email,message,property
-      });
+      // console.log({
+      //   name,number,email,message,property
+      // });
       if(name.length<4){
         document.getElementById("error").innerHTML = "Name should be atleast 4 characters";
+        cal_btn.innerHTML = "Calculate"
         return;
       }
       const numberExp = new RegExp('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$');
       if(!numberExp.test(number)){
         document.getElementById("error").innerHTML = "Invalid phone nunber";
+        cal_btn.innerHTML = "Calculate"
+
         return;
       }
       const emailExp = new RegExp('[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+');
       if(!emailExp.test(email)){
         document.getElementById("error").innerHTML = "Invalid Email";
+        cal_btn.innerHTML = "Calculate"
+
         return;
       }
       if(property==='Select property type'){
         document.getElementById("error").innerHTML = "Select property type";
+        cal_btn.innerHTML = "Calculate"
+
         return;
       }
       
       
       let arr = document.getElementsByClassName("btn-checkout");
-      console.log(arr);
+      // console.log(arr);
+      if(arr.length == 0){
+        document.getElementById("error").innerHTML = "Select atlease one service";
+        cal_btn.innerHTML = "Calculate"
+
+        return;
+      }
       const ids = [];
       for (let i = 0; i < arr.length; i++) {
         ids.push(arr[i].id);
       }
-      console.log(ids);
+      // console.log(ids);
       
-      const url = "http://localhost:5000";
+      // const url = "http://localhost:5000";
     
       // var xhr = new XMLHttpRequest();
       // xhr.open("POST", url, true);
@@ -613,51 +628,54 @@
       //     "email": "test@ha"
       // }));
       var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-if (window.location.href.indexOf("planA") > -1) {
-  _from_url = 1;
-}
-else if(window.location.href.indexOf("planB") > -1){
-  _from_url = 2;
-}
-else if(window.location.href.indexOf("planC") > -1){
-  _from_url = 3;
-}
-else{
-  _from_url = 1;
-}
-let raw = JSON.stringify({
-        name,
-        email,
-        number,
-        message,
-        property,
-        ids,
-        _from_url
-      })
+      myHeaders.append("Content-Type", "application/json");
+      if (window.location.href.indexOf("planA") > -1) {
+        _from_url = 1;
+      }
+      else if(window.location.href.indexOf("planB") > -1){
+        _from_url = 2;
+      }
+      else if(window.location.href.indexOf("planC") > -1){
+        _from_url = 3;
+      }
+      else{
+        _from_url = 1;
+      }
+      let raw = JSON.stringify({
+              name,
+              email,
+              number,
+              message,
+              property,
+              ids,
+              _from_url
+            })
 
-let requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+      let requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
 
 
- fetch("http://localhost:5000", requestOptions)
-  .then(response => response.text())
-  .then(result => {
-    console.log(result);
-    const data = result.split(" ")
-    document.getElementById("amount-id").innerHTML = data[0];
-    document.getElementById("price").style.display = 'block';
-    document.getElementById("pay-now").href = data[1];
-  })
-  .catch(error => {
-    document.getElementById('error').innerHTML = "Technical Error. Please Contact Us";
-  });
-    
-    //   document.getElementById("subject").value='';
+      fetch("https://apna-mail.herokuapp.com/", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+          // console.log(result);
+          const data = result.split(" ")
+          document.getElementById("amount-id").innerHTML = data[0];
+          document.getElementById("price").style.display = 'block';
+          document.getElementById("pay-now").href = data[1];
+          let cal_btn = document.getElementById("cal-btn");
+          cal_btn.innerHTML = "Calculate"
+
+        })
+        .catch(error => {
+          document.getElementById('error').innerHTML = "Technical Error. Please Contact Us";
+        });
+          
+          //   document.getElementById("subject").value='';
     
     }
   </script>
