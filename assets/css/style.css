@@ -436,7 +436,7 @@ h6 {
   /* margin-right: -50%; */
   transform: translate(-50%, -50%);
   position: absolute;
-  margin-top: 60px;
+  margin-top: 70px;
 }
 #counts .btn-get-started:hover {
   background: #a34312;
@@ -550,12 +550,17 @@ h6 {
   }
   .counts .count-box p {
     font-size: 22px !important;
+    /* margin-top: 14rem; */
   }
   .quicklinks {
     padding-left: 30% !important;
   }
 }
-
+@media (max-width: 500px) {
+  .counts .count-box p {
+    font-size: 18px !important;
+  }
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -2100,7 +2105,7 @@ Pricing End
   display: inline-block;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   color: #247881;
   text-decoration: none;
   background: #fff;
@@ -2113,14 +2118,14 @@ Pricing End
   display: flex;
   justify-content: center;
   align-content: space-around;
-  border: 2px solid #247881;
-  box-shadow: 0px 3px 9px 5px rgb(36 120 129 / 13%);
+  border: 3px solid #247881;
+  box-shadow: 0px 3px 12px 6px rgb(36 120 129 / 13%);
 }
 .btn-checkout:hover {
   color: #247881;
   text-decoration: none;
   /* transform: scale(1.05); */
-  box-shadow: 0px 3px 9px 5px rgb(36 120 129 / 13%);
+  box-shadow: 0px 3px 12px 6px rgb(36 120 129 / 13%);
 }
 .btn-checkout-no {
   font-family: "Poppins", sans-serif;
@@ -2130,7 +2135,7 @@ Pricing End
   display: inline-block;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   color: #7f7f7f;
   text-decoration: none;
   background: #fff;
@@ -2143,8 +2148,8 @@ Pricing End
   display: flex;
   justify-content: center;
   align-content: space-around;
-  border: 2px solid #7f7f7f;
-  box-shadow: 0px 2px 9px 3px rgb(67 67 67 / 15%);
+  border: 2px solid #7f7f7f29;
+  box-shadow: 0px 0px 18px 1px rgb(67 67 67 / 11%);
 }
 .btn-checkout-no:hover {
   color: #7f7f7f;
@@ -2223,8 +2228,78 @@ Pricing End
 /* Form inputs end */
 
 .banner {
-  background-image: url("../../banner.png");
-  height: 330px !important;
+  background-image: url("../../assets/img/web/banner.png");
+  /* height: 330px !important; */
   background-size: cover;
   box-shadow: 2px 2px 20px #e1ecf0;
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    height: 300px;
+    padding: 100px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .banner {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .banner {
+    padding: 100px;
+    height: 250px;
+    background-image: url("../../assets/img/tab/banner.png");
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 220px;
+    padding: 80px;
+    background-image: url("../../assets/img/tab/banner.png");
+  }
+}
+@media (max-width: 500px) {
+  .banner {
+    padding: 10px;
+    padding-top: 50vh;
+    height: 100vh;
+    background-image: url("../../assets/img/mob/banner.png");
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+#hero-image {
+  background-image: url("../../assets/img/web/hero.png");
+  object-fit: none;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -20px;
+  background-size: cover;
+  padding-left: 5rem;
+}
+
+@media (max-width: 800px) {
+  #hero-image {
+    background-image: url("../../assets/img/tab/hero.png");
+  }
+}
+@media (max-width: 475px) {
+  #hero-image {
+    background-image: url("../../assets/img/mob/hero.png");
+  }
+  #hero-image img {
+    filter: opacity(40%);
+  }
+}
+
+.card-pricing {
+  margin-top: -1.5rem;
+  margin-bottom: -1.5rem;
+}
+.card-pricing img {
+  width: 2.5rem;
+  height: 2.5rem;
 }
