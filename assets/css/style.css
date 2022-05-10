@@ -2266,7 +2266,7 @@ Pricing End
     height: 100vh;
     background-image: url("../../assets/img/mob/banner.png");
   }
-  p {
+  .banner p {
     font-size: 1.2rem;
   }
 }
@@ -2302,4 +2302,7 @@ Pricing End
 .card-pricing img {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.card-pricing p {
 }
